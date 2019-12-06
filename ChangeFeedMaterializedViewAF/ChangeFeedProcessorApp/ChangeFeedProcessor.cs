@@ -23,16 +23,16 @@ namespace ChangeFeedProcessorApp
             {
                 DatabaseName = "movies",
                 CollectionName = "feedraw",
-                Uri = new Uri("https://team1-openhack.documents.azure.com:443"),
-                MasterKey = "AKhEmDWTnqN5bXU27kmXeBYHLbDb6yzk6fxMkWei3PI7naVjoDVVrIJiChXp63DZAxHrytCPW6KkN3Z6gDzYbA=="
+                Uri = new Uri("< your Cosmos DB ep >"),
+                MasterKey = "< of course your access key >"
             };
 
             DocumentCollectionInfo leaseCollectionInfo = new DocumentCollectionInfo()
             {
                 DatabaseName = "movies",
                 CollectionName = "feedleases",
-                Uri = new Uri("https://team1-openhack.documents.azure.com:443"),
-                MasterKey = "AKhEmDWTnqN5bXU27kmXeBYHLbDb6yzk6fxMkWei3PI7naVjoDVVrIJiChXp63DZAxHrytCPW6KkN3Z6gDzYbA=="
+                Uri = new Uri("your Cosmos DB access key"),
+                MasterKey = "< your access key > "
             };
 
             ChangeFeedProcessorOptions feedProcessorOptions = new ChangeFeedProcessorOptions();
