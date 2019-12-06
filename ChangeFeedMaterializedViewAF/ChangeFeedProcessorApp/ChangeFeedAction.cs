@@ -15,8 +15,8 @@ namespace ChangeFeedProcessorApp
         private DocumentClient client;
         private string databaseName = "movies";
         private string collectionName = "feedleases";
-        private static readonly Uri endpointUri = new Uri("https://team1-openhack.documents.azure.com:443");
-        private static readonly string primaryKey = "AKhEmDWTnqN5bXU27kmXeBYHLbDb6yzk6fxMkWei3PI7naVjoDVVrIJiChXp63DZAxHrytCPW6KkN3Z6gDzYbA==";
+        private static readonly Uri endpointUri = new Uri("< Cosmos db endpoint >");
+        private static readonly string primaryKey = "< access key >";
 
         public ChangeFeedAction()
         {
