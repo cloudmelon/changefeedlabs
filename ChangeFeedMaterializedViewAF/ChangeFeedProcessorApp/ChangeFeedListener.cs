@@ -21,7 +21,6 @@ namespace ChangeFeedProcessorApp
 
         public Task ProcessChangesAsync(IChangeFeedObserverContext context, IReadOnlyList<Document> documents, CancellationToken cancellationToken)
         {
-           
             ChangeFeedAction action = new ChangeFeedAction();
             action.Update(documents);
             Console.WriteLine("Updating " + documents.Count + " documents in lease collection");
