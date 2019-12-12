@@ -23,16 +23,17 @@ namespace ChangeFeedProcessorApp
             {
                 DatabaseName = "movies",
                 CollectionName = "feedraw",
-                Uri = new Uri("endpoint"),
-                MasterKey = "key"
+                Uri = new Uri("< your Cosmos DB ep >"),
+                MasterKey = "< of course your access key >"
+
             };
 
             DocumentCollectionInfo leaseCollectionInfo = new DocumentCollectionInfo()
             {
                 DatabaseName = "movies",
                 CollectionName = "feedleases",
-                Uri = new Uri("endpoint"),
-                MasterKey = "key"
+                Uri = new Uri("your Cosmos DB access key"),
+                MasterKey = "< your access key > "
             };
 
             ChangeFeedProcessorOptions feedProcessorOptions = new ChangeFeedProcessorOptions();

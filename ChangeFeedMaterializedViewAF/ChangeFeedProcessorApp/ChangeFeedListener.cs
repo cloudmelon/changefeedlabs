@@ -24,7 +24,6 @@ namespace ChangeFeedProcessorApp
             ChangeFeedAction action = new ChangeFeedAction();
             action.Update(documents);
             Console.WriteLine("Updating " + documents.Count + " documents in lease collection");
-
             return Task.CompletedTask;
         }
     }

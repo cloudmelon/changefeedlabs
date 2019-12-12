@@ -7,8 +7,10 @@ namespace ChangeFeedBogusDataFaker
 {
     public class Program
     {
-           private static readonly string _endpointUri = "endpoint";
-           private static readonly string _primaryKey = "key";
+
+        private static readonly string _endpointUri = "<your Cosmos DB endpoint>";
+        private static readonly string _primaryKey = "< of course your Cosmos DB access key >";
+
 
         public static async Task Main(string[] args)
           {

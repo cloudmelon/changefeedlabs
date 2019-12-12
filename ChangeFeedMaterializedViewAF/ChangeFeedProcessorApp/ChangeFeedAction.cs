@@ -14,7 +14,7 @@ namespace ChangeFeedProcessorApp
         private Entity entity;
         private string databaseName = "movies";
         private string collectionName = "feedleases";
-   
+
         public ChangeFeedAction()
         {
             this.entity = new Entity();
