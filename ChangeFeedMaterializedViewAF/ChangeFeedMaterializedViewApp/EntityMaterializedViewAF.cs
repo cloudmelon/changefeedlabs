@@ -1,11 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using ChangeFeedMaterializedViewAF;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
 using Microsoft.Azure.WebJobs;
@@ -15,8 +12,20 @@ namespace ChangeFeedMaterializedViewApp
 {
     public class EntityMaterializedViewAF
     {
+        private static Lazy<DocumentClient> lazyClient = new Lazy<DocumentClient>(InitializeDocumentClient);
+        private static DocumentClient client => lazyClient.Value;
+
+        private static DocumentClient InitializeDocumentClient()
+        {
+            // Perform any initialization here
+            var uri = new Uri(Environment.GetEnvironmentVariable($"endpoint"));
+            var authKey = Environment.GetEnvironmentVariable($"primary_key");
+
+            return new DocumentClient(uri, authKey);
+        }
+
         [FunctionName("EntityMaterializedViewAF")]
-        public async void Run([CosmosDBTrigger(
+        public async Task Run([CosmosDBTrigger(
             databaseName: "movies",
             collectionName: "feedraw",
             ConnectionStringSetting = "CosmosDBConnection",
@@ -27,19 +36,16 @@ namespace ChangeFeedMaterializedViewApp
                 log.LogInformation("Documents modified " + documents.Count);
                 log.LogInformation("Modified document Id " + documents[0].Id);
 
-               using (DocumentClient client = new DocumentClient(new Uri(Environment.GetEnvironmentVariable($"endpoint")), Environment.GetEnvironmentVariable($"primary_key")))
-               {
-                    foreach (var doc in documents)
-                    {
-                        var entity = Entity.FromDocument(doc);
 
-                        var tasks = new List<Task>();
+                foreach (var doc in documents)
+                {
+                    var entity = Entity.FromDocument(doc);
 
-                        tasks.Add(UpdateMaterializedView(client, entity, Environment.GetEnvironmentVariable($"database_name"), Environment.GetEnvironmentVariable($"lease_collection")));
+                    var tasks = new List<Task>();
 
-                        await Task.WhenAll(tasks);
+                    tasks.Add(UpdateMaterializedView(client, entity, Environment.GetEnvironmentVariable($"database_name"), Environment.GetEnvironmentVariable($"lease_collection")));
 
-                 }
+                    await Task.WhenAll(tasks);
 
                 }
 

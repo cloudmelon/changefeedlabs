@@ -7,8 +7,8 @@ namespace ChangeFeedBogusDataFaker
 {
     public class Program
     {
-           private static readonly string _endpointUri = "https://team1-openhack.documents.azure.com:443/";
-           private static readonly string _primaryKey = "AKhEmDWTnqN5bXU27kmXeBYHLbDb6yzk6fxMkWei3PI7naVjoDVVrIJiChXp63DZAxHrytCPW6KkN3Z6gDzYbA==";
+           private static readonly string _endpointUri = "endpoint";
+           private static readonly string _primaryKey = "key";
 
         public static async Task Main(string[] args)
           {

@@ -12,17 +12,23 @@ namespace ChangeFeedProcessorApp
     public class ChangeFeedAction
     {
         private Entity entity;
-        private DocumentClient client;
         private string databaseName = "movies";
         private string collectionName = "feedleases";
-        private static readonly Uri endpointUri = new Uri("https://team1-openhack.documents.azure.com:443");
-        private static readonly string primaryKey = "AKhEmDWTnqN5bXU27kmXeBYHLbDb6yzk6fxMkWei3PI7naVjoDVVrIJiChXp63DZAxHrytCPW6KkN3Z6gDzYbA==";
-
+   
         public ChangeFeedAction()
         {
             this.entity = new Entity();
-            this.client = new DocumentClient(endpointUri, primaryKey);
+        }
 
+        private static Lazy<DocumentClient> lazyClient = new Lazy<DocumentClient>(InitializeDocumentClient);
+        private static DocumentClient client => lazyClient.Value;
+
+        private static DocumentClient InitializeDocumentClient()
+        {
+            // Perform any initialization here
+            var endpointUri = new Uri("your endpoint");
+            var primaryKey = "you key";
+            return new DocumentClient(endpointUri, primaryKey);
         }
 
         public async Task Update(IReadOnlyList<Document> documents)
