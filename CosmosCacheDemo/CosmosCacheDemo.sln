@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29521.150
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CosmosDB.Cache.Common", "CosmosCacheCommon\CosmosDB.Cache.Common.csproj", "{377C14ED-A33C-44FA-9D1C-DC5CA05F052C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CosmosDB.Cache.APIs", "CosmosDB.Cache.APIs\CosmosDB.Cache.APIs.csproj", "{F4283E97-B0A6-4509-8053-C77317AB7AB6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{377C14ED-A33C-44FA-9D1C-DC5CA05F052C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{377C14ED-A33C-44FA-9D1C-DC5CA05F052C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{377C14ED-A33C-44FA-9D1C-DC5CA05F052C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{377C14ED-A33C-44FA-9D1C-DC5CA05F052C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4283E97-B0A6-4509-8053-C77317AB7AB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4283E97-B0A6-4509-8053-C77317AB7AB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4283E97-B0A6-4509-8053-C77317AB7AB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4283E97-B0A6-4509-8053-C77317AB7AB6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {466D94FF-B442-4ED3-B298-FC9D17071199}
+	EndGlobalSection
+EndGlobal
