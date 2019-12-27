@@ -1,6 +1,10 @@
-## ChangeFeed Labs
+# Cosmos DB demos
 
-To be continued !
+This repo contains 3 demos : 
+
+- Change Feed ( processor + materialized view )
+- Cosmos DB data writer ( enable multi-master and confliction policy )
+- Cosmos DB + Distributed cache 
 
 
 ## More details on my blog : 
