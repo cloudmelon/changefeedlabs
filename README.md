@@ -1,8 +1,8 @@
-# Cosmos DB Change Feed and Cache demo
+# Cosmos DB Change Feed and Distributed Cache
 
 This repo contains 3 demos : 
 
-- Change Feed ( processor + materialized view )
+- Cosmos DB Change Feed ( processor + materialized view ) 
 - Cosmos DB data writer ( enable multi-master and confliction policy )
 - Cosmos DB + Distributed cache 
 
