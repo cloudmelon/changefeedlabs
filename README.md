@@ -6,6 +6,7 @@ This repo contains 3 demos :
 - Cosmos DB data writer ( enable multi-master and confliction policy )
 - Cosmos DB + Distributed cache 
 
+<img src="Screenshots/ChangeFeed.PNG" alt="change feed" width="600px"/>
 
 ## References
 
