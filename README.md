@@ -9,7 +9,7 @@ This repo contains 3 demos :
 <img src="Screenshots/ChangeFeed.PNG" alt="change feed" width="600px"/>
 
 ## References
-
+- ChangeFeed Overview : https://docs.microsoft.com/en-us/azure/cosmos-db/change-feed
 - Cosmic Notes :  https://docs.microsoft.com/en-gb/samples/browse/
 - Cosmos DB Labs and workshops online :  https://cosmosdb.github.io/labs/
 
